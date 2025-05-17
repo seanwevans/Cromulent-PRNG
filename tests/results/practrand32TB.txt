@@ -1,0 +1,463 @@
+RNG_test using PractRand version 0.95
+RNG = RNG_stdin64, seed = unknown
+test set = core, folding = standard (64 bit)
+
+rng=RNG_stdin64, seed=unknown
+length= 32 terabytes (2^45 bytes), time= 141623 seconds
+  Test Name                         Raw       Processed     Evaluation
+  BCFN(2+0,13-0,T)                  R=  -2.1  p = 0.805     normal           
+  BCFN(2+1,13-0,T)                  R=  -1.9  p = 0.784     normal           
+  BCFN(2+2,13-0,T)                  R=  +2.9  p = 0.119     normal           
+  BCFN(2+3,13-0,T)                  R=  +4.0  p = 0.054     normal           
+  BCFN(2+4,13-0,T)                  R=  +1.5  p = 0.272     normal           
+  BCFN(2+5,13-0,T)                  R=  +0.3  p = 0.443     normal           
+  BCFN(2+6,13-0,T)                  R=  -1.9  p = 0.775     normal           
+  BCFN(2+7,13-0,T)                  R=  +0.6  p = 0.393     normal           
+  BCFN(2+8,13-0,T)                  R=  +3.5  p = 0.081     normal           
+  BCFN(2+9,13-0,T)                  R=  -3.3  p = 0.913     normal           
+  BCFN(2+10,13-0,T)                 R=  -3.3  p = 0.916     normal           
+  BCFN(2+11,13-0,T)                 R=  +0.9  p = 0.359     normal           
+  BCFN(2+12,13-0,T)                 R=  -1.4  p = 0.719     normal           
+  BCFN(2+13,13-0,T)                 R=  +3.6  p = 0.072     normal           
+  BCFN(2+14,13-0,T)                 R=  -0.3  p = 0.544     normal           
+  BCFN(2+15,13-0,T)                 R=  -2.2  p = 0.812     normal           
+  BCFN(2+16,13-0,T)                 R=  +3.0  p = 0.110     normal           
+  BCFN(2+17,13-1,T)                 R=  -0.5  p = 0.575     normal           
+  BCFN(2+18,13-1,T)                 R=  +2.6  p = 0.149     normal           
+  BCFN(2+19,13-2,T)                 R=  +0.7  p = 0.385     normal           
+  BCFN(2+20,13-3,T)                 R=  +1.4  p = 0.276     normal           
+  BCFN(2+21,13-3,T)                 R=  +4.9  p = 0.027     normal           
+  BCFN(2+22,13-4,T)                 R=  +0.9  p = 0.347     normal           
+  BCFN(2+23,13-5,T)                 R=  -0.5  p = 0.555     normal           
+  BCFN(2+24,13-5,T)                 R=  -0.6  p = 0.582     normal           
+  BCFN(2+25,13-6,T)                 R=  +1.1  p = 0.299     normal           
+  BCFN(2+26,13-6,T)                 R=  -2.0  p = 0.793     normal           
+  BCFN(2+27,13-7,T)                 R=  +2.9  p = 0.113     normal           
+  BCFN(2+28,13-8,T)                 R=  +1.6  p = 0.214     normal           
+  BCFN(2+29,13-8,T)                 R=  -1.0  p = 0.625     normal           
+  BCFN(2+30,13-9,T)                 R=  -3.0  p = 0.979     normal           
+  BCFN(2+31,13-9,T)                 R=  +2.0  p = 0.158     normal           
+  DC6-9x1Bytes-1                    R=  +3.0  p = 0.067     normal           
+  Gap-16:A                          R=  -1.6  p = 0.904     normal           
+  Gap-16:B                          R=  -1.2  p = 0.796     normal           
+  FPF-14+6/16:(0,14-0)              R=  -1.3  p = 0.826     normal           
+  FPF-14+6/16:(1,14-0)              R=  -0.6  p = 0.672     normal           
+  FPF-14+6/16:(2,14-0)              R=  +1.7  p = 0.112     normal           
+  FPF-14+6/16:(3,14-0)              R=  -0.6  p = 0.675     normal           
+  FPF-14+6/16:(4,14-0)              R=  -1.9  p = 0.911     normal           
+  FPF-14+6/16:(5,14-0)              R=  +0.2  p = 0.444     normal           
+  FPF-14+6/16:(6,14-0)              R=  +0.7  p = 0.315     normal           
+  FPF-14+6/16:(7,14-0)              R=  -1.0  p = 0.760     normal           
+  FPF-14+6/16:(8,14-0)              R=  -2.4  p = 0.958     normal           
+  FPF-14+6/16:(9,14-0)              R=  -1.3  p = 0.820     normal           
+  FPF-14+6/16:(10,14-0)             R=  -1.7  p = 0.880     normal           
+  FPF-14+6/16:(11,14-0)             R=  +1.5  p = 0.149     normal           
+  FPF-14+6/16:(12,14-0)             R=  +0.7  p = 0.320     normal           
+  FPF-14+6/16:(13,14-0)             R=  -0.9  p = 0.744     normal           
+  FPF-14+6/16:(14,14-0)             R=  -1.3  p = 0.819     normal           
+  FPF-14+6/16:(15,14-0)             R=  +0.5  p = 0.374     normal           
+  FPF-14+6/16:(16,14-0)             R=  -1.4  p = 0.838     normal           
+  FPF-14+6/16:(17,14-0)             R=  +0.1  p = 0.479     normal           
+  FPF-14+6/16:(18,14-0)             R=  -0.3  p = 0.575     normal           
+  FPF-14+6/16:(19,14-0)             R=  +1.5  p = 0.141     normal           
+  FPF-14+6/16:(20,14-0)             R=  -1.6  p = 0.870     normal           
+  FPF-14+6/16:(21,14-1)             R=  -1.5  p = 0.857     normal           
+  FPF-14+6/16:(22,14-2)             R=  +0.7  p = 0.310     normal           
+  FPF-14+6/16:(23,14-2)             R=  -0.5  p = 0.640     normal           
+  FPF-14+6/16:(24,14-3)             R=  -1.4  p = 0.844     normal           
+  FPF-14+6/16:(25,14-4)             R=  +0.9  p = 0.270     normal           
+  FPF-14+6/16:(26,14-5)             R=  -2.7  p = 0.975     normal           
+  FPF-14+6/16:(27,14-5)             R=  +3.1  p = 0.019     normal           
+  FPF-14+6/16:(28,14-6)             R=  +2.2  p = 0.068     normal           
+  FPF-14+6/16:(29,14-7)             R=  -0.5  p = 0.624     normal           
+  FPF-14+6/16:(30,14-8)             R=  +2.7  p = 0.039     normal           
+  FPF-14+6/16:(31,14-8)             R=  -0.7  p = 0.679     normal           
+  FPF-14+6/16:(32,14-9)             R=  -0.7  p = 0.676     normal           
+  FPF-14+6/16:(33,14-10)            R=  +0.7  p = 0.283     normal           
+  FPF-14+6/16:(34,14-11)            R=  -1.1  p = 0.770     normal           
+  FPF-14+6/16:(35,14-11)            R=  -0.5  p = 0.584     normal           
+  FPF-14+6/16:all                   R=  -2.1  p = 0.940     normal           
+  FPF-14+6/16:cross                 R=  -0.2  p = 0.524     normal           
+  BRank(12):128(128)                R=  -0.4  p~= 0.627     normal           
+  BRank(12):256(128)                R=  -0.6  p~= 0.722     normal           
+  BRank(12):384(32)                 R=  -1.5  p~= 0.947     normal           
+  BRank(12):512(64)                 R=  -1.1  p~= 0.870     normal           
+  BRank(12):768(16)                 R=  +0.6  p~= 0.240     normal           
+  BRank(12):1K(64)                  R=  -1.5  p~= 0.940     normal           
+  BRank(12):1536(16)                R=  -0.4  p~= 0.640     normal           
+  BRank(12):2K(32)                  R=  +0.3  p~= 0.340     normal           
+  BRank(12):3K(8)                   R=  +1.4  p~= 0.100     normal           
+  BRank(12):4K(32)                  R=  +0.4  p~= 0.312     normal           
+  BRank(12):6K(8)                   R=  +1.0  p~= 0.160     normal           
+  BRank(12):8K(16)                  R=  -0.6  p~= 0.690     normal           
+  BRank(12):12K(4)                  R=  +1.0  p~= 0.180     normal           
+  BRank(12):16K(16)                 R=  -0.6  p~= 0.690     normal           
+  BRank(12):24K(4)                  R=  +0.4  p~= 0.340     normal           
+  BRank(12):32K(8)                  R=  +1.5  p~= 0.080     normal           
+  BRank(12):48K(2)                  R=  +0.8  p~= 0.293     normal           
+  BRank(12):64K(5)                  R=  -1.0  p~= 0.780     normal           
+  mod3n(5):(0,9-6)                  R=  -0.2  p = 0.484     normal           
+  mod3n(5):(1,9-6)                  R=  +0.0  p = 0.437     normal           
+  mod3n(5):(2,9-6)                  R=  +0.1  p = 0.420     normal           
+  mod3n(5):(3,9-6)                  R=  -1.0  p = 0.662     normal           
+  mod3n(5):(4,9-6)                  R=  -0.1  p = 0.467     normal           
+  mod3n(5):(5,9-6)                  R=  +1.2  p = 0.232     normal           
+  mod3n(5):(6,9-6)                  R=  -0.6  p = 0.567     normal           
+  mod3n(5):(7,9-6)                  R=  -0.5  p = 0.545     normal           
+  mod3n(5):(8,9-6)                  R=  +3.1  p = 0.065     normal           
+  mod3n(5):(9,9-6)                  R=  +3.0  p = 0.073     normal           
+  mod3n(5):(10,9-6)                 R=  +3.5  p = 0.049     normal           
+  mod3n(5):(11,9-6)                 R=  -0.6  p = 0.573     normal           
+  mod3n(5):(12,9-6)                 R=  -1.1  p = 0.698     normal           
+  mod3n(5):(13,9-6)                 R=  +0.3  p = 0.390     normal           
+  mod3n(5):(14,9-6)                 R=  -0.3  p = 0.519     normal           
+  mod3n(5):(15,9-6)                 R=  +0.8  p = 0.297     normal           
+  TMFn(2+0):wl                      R=  -2.8  p~= 0.8       normal           
+  TMFn(2+1):wl                      R=  +1.3  p~= 0.3       normal           
+  TMFn(2+2):wl                      R=  -2.1  p~= 0.8       normal           
+  TMFn(2+3):wl                      R=  -1.8  p~= 0.7       normal           
+  TMFn(2+4):wl                      R=  -0.7  p~= 0.6       normal           
+  TMFn(2+5):wl                      R=  +1.7  p~= 0.3       normal           
+  TMFn(2+6):wl                      R=  +3.2  p~= 0.2       normal           
+  TMFn(2+7):wl                      R=  -0.3  p~= 0.5       normal           
+  TMFn(2+8):wl                      R=  +0.9  p~= 0.4       normal           
+  TMFn(2+9):wl                      R=  -1.4  p~= 0.7       normal           
+  TMFn(2+10):wl                     R=  -0.8  p~= 0.6       normal           
+  TMFn(2+11):wl                     R=  +1.0  p~= 0.4       normal           
+  TMFn(2+12):wl                     R=  -1.2  p~= 0.7       normal           
+  TMFn(2+13):wl                     R=  +0.1  p~= 0.5       normal           
+  [Low16/64]BCFN(2+0,13-0,T)        R=  -0.5  p = 0.581     normal           
+  [Low16/64]BCFN(2+1,13-0,T)        R=  +2.4  p = 0.164     normal           
+  [Low16/64]BCFN(2+2,13-0,T)        R=  +1.9  p = 0.219     normal           
+  [Low16/64]BCFN(2+3,13-0,T)        R=  -4.7  p = 0.976     normal           
+  [Low16/64]BCFN(2+4,13-0,T)        R=  +1.8  p = 0.236     normal           
+  [Low16/64]BCFN(2+5,13-0,T)        R=  +0.4  p = 0.426     normal           
+  [Low16/64]BCFN(2+6,13-0,T)        R=  +0.2  p = 0.467     normal           
+  [Low16/64]BCFN(2+7,13-0,T)        R=  -0.0  p = 0.496     normal           
+  [Low16/64]BCFN(2+8,13-0,T)        R=  -1.3  p = 0.703     normal           
+  [Low16/64]BCFN(2+9,13-0,T)        R=  +3.0  p = 0.113     normal           
+  [Low16/64]BCFN(2+10,13-0,T)       R=  +4.2  p = 0.045     normal           
+  [Low16/64]BCFN(2+11,13-0,T)       R=  +0.2  p = 0.468     normal           
+  [Low16/64]BCFN(2+12,13-0,T)       R=  +0.4  p = 0.425     normal           
+  [Low16/64]BCFN(2+13,13-0,T)       R=  -2.0  p = 0.797     normal           
+  [Low16/64]BCFN(2+14,13-0,T)       R=  +2.4  p = 0.168     normal           
+  [Low16/64]BCFN(2+15,13-1,T)       R=  -2.5  p = 0.850     normal           
+  [Low16/64]BCFN(2+16,13-1,T)       R=  +0.5  p = 0.413     normal           
+  [Low16/64]BCFN(2+17,13-2,T)       R=  -0.9  p = 0.640     normal           
+  [Low16/64]BCFN(2+18,13-3,T)       R=  +0.5  p = 0.407     normal           
+  [Low16/64]BCFN(2+19,13-3,T)       R=  -2.1  p = 0.808     normal           
+  [Low16/64]BCFN(2+20,13-4,T)       R=  +1.4  p = 0.275     normal           
+  [Low16/64]BCFN(2+21,13-5,T)       R=  +3.1  p = 0.103     normal           
+  [Low16/64]BCFN(2+22,13-5,T)       R=  -3.1  p = 0.910     normal           
+  [Low16/64]BCFN(2+23,13-6,T)       R=  +1.8  p = 0.210     normal           
+  [Low16/64]BCFN(2+24,13-6,T)       R=  +0.6  p = 0.364     normal           
+  [Low16/64]BCFN(2+25,13-7,T)       R=  +1.8  p = 0.207     normal           
+  [Low16/64]BCFN(2+26,13-8,T)       R=  -0.1  p = 0.449     normal           
+  [Low16/64]BCFN(2+27,13-8,T)       R=  -1.1  p = 0.633     normal           
+  [Low16/64]BCFN(2+28,13-9,T)       R=  -0.9  p = 0.602     normal           
+  [Low16/64]BCFN(2+29,13-9,T)       R=  -0.6  p = 0.538     normal           
+  [Low16/64]DC6-9x1Bytes-1          R=  -0.3  p = 0.602     normal           
+  [Low16/64]Gap-16:A                R=  -0.7  p = 0.747     normal           
+  [Low16/64]Gap-16:B                R=  +0.9  p = 0.255     normal           
+  [Low16/64]FPF-14+6/16:(0,14-0)    R=  +1.4  p = 0.168     normal           
+  [Low16/64]FPF-14+6/16:(1,14-0)    R=  +0.5  p = 0.356     normal           
+  [Low16/64]FPF-14+6/16:(2,14-0)    R=  -1.8  p = 0.895     normal           
+  [Low16/64]FPF-14+6/16:(3,14-0)    R=  +0.5  p = 0.355     normal           
+  [Low16/64]FPF-14+6/16:(4,14-0)    R=  -0.3  p = 0.581     normal           
+  [Low16/64]FPF-14+6/16:(5,14-0)    R=  -2.4  p = 0.959     normal           
+  [Low16/64]FPF-14+6/16:(6,14-0)    R=  -1.0  p = 0.761     normal           
+  [Low16/64]FPF-14+6/16:(7,14-0)    R=  -0.0  p = 0.510     normal           
+  [Low16/64]FPF-14+6/16:(8,14-0)    R=  -0.9  p = 0.745     normal           
+  [Low16/64]FPF-14+6/16:(9,14-0)    R=  -2.2  p = 0.938     normal           
+  [Low16/64]FPF-14+6/16:(10,14-0)   R=  -1.2  p = 0.808     normal           
+  [Low16/64]FPF-14+6/16:(11,14-0)   R=  -0.5  p = 0.641     normal           
+  [Low16/64]FPF-14+6/16:(12,14-0)   R=  +1.9  p = 0.092     normal           
+  [Low16/64]FPF-14+6/16:(13,14-0)   R=  -2.3  p = 0.946     normal           
+  [Low16/64]FPF-14+6/16:(14,14-0)   R=  +0.0  p = 0.492     normal           
+  [Low16/64]FPF-14+6/16:(15,14-0)   R=  +0.1  p = 0.487     normal           
+  [Low16/64]FPF-14+6/16:(16,14-0)   R=  +0.5  p = 0.363     normal           
+  [Low16/64]FPF-14+6/16:(17,14-0)   R=  -0.9  p = 0.749     normal           
+  [Low16/64]FPF-14+6/16:(18,14-0)   R=  +1.4  p = 0.159     normal           
+  [Low16/64]FPF-14+6/16:(19,14-1)   R=  +0.4  p = 0.382     normal           
+  [Low16/64]FPF-14+6/16:(20,14-2)   R=  +1.3  p = 0.177     normal           
+  [Low16/64]FPF-14+6/16:(21,14-2)   R=  -0.7  p = 0.687     normal           
+  [Low16/64]FPF-14+6/16:(22,14-3)   R=  +0.0  p = 0.497     normal           
+  [Low16/64]FPF-14+6/16:(23,14-4)   R=  -0.1  p = 0.539     normal           
+  [Low16/64]FPF-14+6/16:(24,14-5)   R=  +1.4  p = 0.161     normal           
+  [Low16/64]FPF-14+6/16:(25,14-5)   R=  -0.7  p = 0.680     normal           
+  [Low16/64]FPF-14+6/16:(26,14-6)   R=  +0.3  p = 0.402     normal           
+  [Low16/64]FPF-14+6/16:(27,14-7)   R=  +1.4  p = 0.158     normal           
+  [Low16/64]FPF-14+6/16:(28,14-8)   R=  -1.3  p = 0.817     normal           
+  [Low16/64]FPF-14+6/16:(29,14-8)   R=  +1.6  p = 0.127     normal           
+  [Low16/64]FPF-14+6/16:(30,14-9)   R=  +1.0  p = 0.220     normal           
+  [Low16/64]FPF-14+6/16:(31,14-10)  R=  -1.1  p = 0.759     normal           
+  [Low16/64]FPF-14+6/16:(32,14-11)  R=  +1.5  p = 0.147     normal           
+  [Low16/64]FPF-14+6/16:(33,14-11)  R=  +4.2  p = 0.013     normal           
+  [Low16/64]FPF-14+6/16:all         R=  -1.3  p = 0.840     normal           
+  [Low16/64]FPF-14+6/16:cross       R=  +0.7  p = 0.221     normal           
+  [Low16/64]BRank(12):128(32)       R=  -0.6  p~= 0.720     normal           
+  [Low16/64]BRank(12):256(32)       R=  +0.3  p~= 0.360     normal           
+  [Low16/64]BRank(12):384(8)        R=  -0.7  p~= 0.750     normal           
+  [Low16/64]BRank(12):512(16)       R=  -0.1  p~= 0.520     normal           
+  [Low16/64]BRank(12):768(4)        R=  +1.0  p~= 0.180     normal           
+  [Low16/64]BRank(12):1K(16)        R=  -0.1  p~= 0.520     normal           
+  [Low16/64]BRank(12):1536(4)       R=  -0.8  p~= 0.670     normal           
+  [Low16/64]BRank(12):2K(8)         R=  -0.7  p~= 0.750     normal           
+  [Low16/64]BRank(12):3K(2)         R=  -1.0  p~= 0.744     normal           
+  [Low16/64]BRank(12):4K(8)         R=  +1.0  p~= 0.160     normal           
+  [Low16/64]BRank(12):6K(2)         R=  +1.6  p~= 0.168     normal           
+  [Low16/64]BRank(12):8K(4)         R=  -0.8  p~= 0.670     normal           
+  [Low16/64]BRank(12):12K(1)        R=  +1.8  p~= 0.146     normal           
+  [Low16/64]BRank(12):16K(4)        R=  -0.8  p~= 0.670     normal           
+  [Low16/64]BRank(12):24K(1)        R=  +0.4  p~= 0.366     normal           
+  [Low16/64]BRank(12):32K(2)        R=  +2.5  p~= 0.088     normal           
+  [Low16/64]BRank(12):48K(1)        R=  -0.7  p~= 0.689     normal           
+  [Low16/64]BRank(12):64K(1)        R=  +1.8  p~= 0.146     normal           
+  [Low16/64]mod3n(5):(0,9-6)        R=  -0.1  p = 0.456     normal           
+  [Low16/64]mod3n(5):(1,9-6)        R=  +0.0  p = 0.437     normal           
+  [Low16/64]mod3n(5):(2,9-6)        R=  -0.6  p = 0.587     normal           
+  [Low16/64]mod3n(5):(3,9-6)        R=  -1.2  p = 0.723     normal           
+  [Low16/64]mod3n(5):(4,9-6)        R=  +0.0  p = 0.441     normal           
+  [Low16/64]mod3n(5):(5,9-6)        R=  -1.7  p = 0.830     normal           
+  [Low16/64]mod3n(5):(6,9-6)        R=  -1.0  p = 0.663     normal           
+  [Low16/64]mod3n(5):(7,9-6)        R=  -1.3  p = 0.746     normal           
+  [Low16/64]mod3n(5):(8,9-6)        R=  -3.0  p = 0.982     normal           
+  [Low16/64]mod3n(5):(9,9-6)        R=  +1.1  p = 0.238     normal           
+  [Low16/64]mod3n(5):(10,9-6)       R=  +4.1  p = 0.031     normal           
+  [Low16/64]mod3n(5):(11,9-6)       R=  -1.3  p = 0.737     normal           
+  [Low16/64]mod3n(5):(12,9-6)       R=  +0.1  p = 0.428     normal           
+  [Low16/64]mod3n(5):(13,9-6)       R=  -1.4  p = 0.760     normal           
+  [Low16/64]mod3n(5):(14,9-6)       R=  +0.6  p = 0.328     normal           
+  [Low16/64]mod3n(5):(15,9-6)       R=  -2.8  p = 0.971     normal           
+  [Low16/64]TMFn(2+0):wl            R=  -1.1  p~= 0.7       normal           
+  [Low16/64]TMFn(2+1):wl            R=  -1.0  p~= 0.7       normal           
+  [Low16/64]TMFn(2+2):wl            R=  -0.8  p~= 0.6       normal           
+  [Low16/64]TMFn(2+3):wl            R=  +1.1  p~= 0.3       normal           
+  [Low16/64]TMFn(2+4):wl            R=  +0.3  p~= 0.4       normal           
+  [Low16/64]TMFn(2+5):wl            R=  +1.0  p~= 0.4       normal           
+  [Low16/64]TMFn(2+6):wl            R=  +3.1  p~= 0.2       normal           
+  [Low16/64]TMFn(2+7):wl            R=  +0.2  p~= 0.5       normal           
+  [Low16/64]TMFn(2+8):wl            R=  +1.5  p~= 0.3       normal           
+  [Low16/64]TMFn(2+9):wl            R=  -1.5  p~= 0.7       normal           
+  [Low16/64]TMFn(2+10):wl           R=  +2.2  p~= 0.2       normal           
+  [Low16/64]TMFn(2+11):wl           R=  -0.8  p~= 0.6       normal           
+  [Low16/64]TMFn(2+12):wl           R=  -1.6  p~= 0.7       normal           
+  [Low16/64]TMFn(2+13):wl           R=  -0.6  p~= 0.6       normal           
+  [Low4/64]BCFN(2+0,13-0,T)         R=  -3.1  p = 0.900     normal           
+  [Low4/64]BCFN(2+1,13-0,T)         R=  +7.0  p =  3.1e-3   normalish       
+  [Low4/64]BCFN(2+2,13-0,T)         R=  +0.7  p = 0.379     normal           
+  [Low4/64]BCFN(2+3,13-0,T)         R=  +3.2  p = 0.098     normal           
+  [Low4/64]BCFN(2+4,13-0,T)         R=  +0.9  p = 0.354     normal           
+  [Low4/64]BCFN(2+5,13-0,T)         R=  +0.4  p = 0.433     normal           
+  [Low4/64]BCFN(2+6,13-0,T)         R=  -1.5  p = 0.732     normal           
+  [Low4/64]BCFN(2+7,13-0,T)         R=  +2.4  p = 0.159     normal           
+  [Low4/64]BCFN(2+8,13-0,T)         R=  +2.0  p = 0.212     normal           
+  [Low4/64]BCFN(2+9,13-0,T)         R=  -2.7  p = 0.863     normal           
+  [Low4/64]BCFN(2+10,13-0,T)        R=  +1.4  p = 0.279     normal           
+  [Low4/64]BCFN(2+11,13-0,T)        R=  +0.4  p = 0.430     normal           
+  [Low4/64]BCFN(2+12,13-0,T)        R=  -5.6  p = 0.990     normal           
+  [Low4/64]BCFN(2+13,13-1,T)        R=  +1.4  p = 0.273     normal           
+  [Low4/64]BCFN(2+14,13-1,T)        R=  +1.6  p = 0.255     normal           
+  [Low4/64]BCFN(2+15,13-2,T)        R=  -1.6  p = 0.739     normal           
+  [Low4/64]BCFN(2+16,13-3,T)        R=  -4.3  p = 0.969     normal           
+  [Low4/64]BCFN(2+17,13-3,T)        R=  +0.2  p = 0.453     normal           
+  [Low4/64]BCFN(2+18,13-4,T)        R=  +4.2  p = 0.049     normal           
+  [Low4/64]BCFN(2+19,13-5,T)        R=  +1.4  p = 0.271     normal           
+  [Low4/64]BCFN(2+20,13-5,T)        R=  +1.1  p = 0.301     normal           
+  [Low4/64]BCFN(2+21,13-6,T)        R=  +5.4  p = 0.024     normal           
+  [Low4/64]BCFN(2+22,13-6,T)        R=  +1.7  p = 0.218     normal           
+  [Low4/64]BCFN(2+23,13-7,T)        R=  -1.7  p = 0.759     normal           
+  [Low4/64]BCFN(2+24,13-8,T)        R=  -0.9  p = 0.609     normal           
+  [Low4/64]BCFN(2+25,13-8,T)        R=  -0.5  p = 0.525     normal           
+  [Low4/64]BCFN(2+26,13-9,T)        R=  -2.6  p = 0.943     normal           
+  [Low4/64]BCFN(2+27,13-9,T)        R=  +0.4  p = 0.354     normal           
+  [Low4/64]DC6-9x1Bytes-1           R=  -3.8  p = 0.982     normalish       
+  [Low4/64]Gap-16:A                 R=  -0.1  p = 0.602     normal           
+  [Low4/64]Gap-16:B                 R=  +0.5  p = 0.350     normal           
+  [Low4/64]FPF-14+6/16:(0,14-0)     R=  +4.3  p =  1.2e-3   normal           
+  [Low4/64]FPF-14+6/16:(1,14-0)     R=  +1.3  p = 0.188     normal           
+  [Low4/64]FPF-14+6/16:(2,14-0)     R=  -0.4  p = 0.601     normal           
+  [Low4/64]FPF-14+6/16:(3,14-0)     R=  -3.0  p = 0.984     normal           
+  [Low4/64]FPF-14+6/16:(4,14-0)     R=  +0.9  p = 0.276     normal           
+  [Low4/64]FPF-14+6/16:(5,14-0)     R=  +2.6  p = 0.033     normal           
+  [Low4/64]FPF-14+6/16:(6,14-0)     R=  -0.6  p = 0.656     normal           
+  [Low4/64]FPF-14+6/16:(7,14-0)     R=  +1.4  p = 0.162     normal           
+  [Low4/64]FPF-14+6/16:(8,14-0)     R=  +1.3  p = 0.177     normal           
+  [Low4/64]FPF-14+6/16:(9,14-0)     R=  +1.1  p = 0.225     normal           
+  [Low4/64]FPF-14+6/16:(10,14-0)    R=  -0.9  p = 0.750     normal           
+  [Low4/64]FPF-14+6/16:(11,14-0)    R=  -0.4  p = 0.605     normal           
+  [Low4/64]FPF-14+6/16:(12,14-0)    R=  -1.0  p = 0.750     normal           
+  [Low4/64]FPF-14+6/16:(13,14-0)    R=  -0.0  p = 0.503     normal           
+  [Low4/64]FPF-14+6/16:(14,14-0)    R=  -1.4  p = 0.833     normal           
+  [Low4/64]FPF-14+6/16:(15,14-0)    R=  +0.4  p = 0.404     normal           
+  [Low4/64]FPF-14+6/16:(16,14-0)    R=  +0.8  p = 0.280     normal           
+  [Low4/64]FPF-14+6/16:(17,14-1)    R=  +0.9  p = 0.257     normal           
+  [Low4/64]FPF-14+6/16:(18,14-2)    R=  -0.4  p = 0.619     normal           
+  [Low4/64]FPF-14+6/16:(19,14-2)    R=  -0.1  p = 0.538     normal           
+  [Low4/64]FPF-14+6/16:(20,14-3)    R=  +1.4  p = 0.166     normal           
+  [Low4/64]FPF-14+6/16:(21,14-4)    R=  +0.8  p = 0.289     normal           
+  [Low4/64]FPF-14+6/16:(22,14-5)    R=  -0.7  p = 0.691     normal           
+  [Low4/64]FPF-14+6/16:(23,14-5)    R=  -0.8  p = 0.716     normal           
+  [Low4/64]FPF-14+6/16:(24,14-6)    R=  +3.7  p =  8.0e-3   normal           
+  [Low4/64]FPF-14+6/16:(25,14-7)    R=  -0.7  p = 0.689     normal           
+  [Low4/64]FPF-14+6/16:(26,14-8)    R=  +1.0  p = 0.229     normal           
+  [Low4/64]FPF-14+6/16:(27,14-8)    R=  -0.6  p = 0.635     normal           
+  [Low4/64]FPF-14+6/16:(28,14-9)    R=  -1.0  p = 0.762     normal           
+  [Low4/64]FPF-14+6/16:(29,14-10)   R=  +2.6  p = 0.051     normal           
+  [Low4/64]FPF-14+6/16:(30,14-11)   R=  +1.4  p = 0.150     normal           
+  [Low4/64]FPF-14+6/16:(31,14-11)   R=  +3.1  p = 0.034     normal           
+  [Low4/64]FPF-14+6/16:all          R=  +1.9  p = 0.102     normal           
+  [Low4/64]FPF-14+6/16:cross        R=  +0.4  p = 0.298     normal           
+  [Low4/64]BRank(12):128(16)        R=  +0.8  p~= 0.220     normal           
+  [Low4/64]BRank(12):256(16)        R=  +1.1  p~= 0.130     normal           
+  [Low4/64]BRank(12):384(4)         R=  +0.3  p~= 0.400     normal           
+  [Low4/64]BRank(12):512(8)         R=  +2.0  p~= 0.039     normal           
+  [Low4/64]BRank(12):768(4)         R=  +0.4  p~= 0.340     normal           
+  [Low4/64]BRank(12):1K(8)          R=  -0.7  p~= 0.750     normal           
+  [Low4/64]BRank(12):1536(2)        R=  -0.2  p~= 0.554     normal           
+  [Low4/64]BRank(12):2K(4)          R=  -0.1  p~= 0.490     normal           
+  [Low4/64]BRank(12):3K(2)          R=  +0.8  p~= 0.293     normal           
+  [Low4/64]BRank(12):4K(4)          R=  -0.8  p~= 0.670     normal           
+  [Low4/64]BRank(12):6K(1)          R=  +0.4  p~= 0.366     normal           
+  [Low4/64]BRank(12):8K(2)          R=  +0.6  p~= 0.322     normal           
+  [Low4/64]BRank(12):12K(1)         R=  -0.7  p~= 0.689     normal           
+  [Low4/64]BRank(12):16K(2)         R=  +0.8  p~= 0.293     normal           
+  [Low4/64]BRank(12):24K(1)         R=  +1.8  p~= 0.146     normal           
+  [Low4/64]BRank(12):32K(1)         R=  +0.4  p~= 0.366     normal           
+  [Low4/64]mod3n(5):(0,9-6)         R=  +2.9  p = 0.075     normal           
+  [Low4/64]mod3n(5):(1,9-6)         R=  -0.3  p = 0.502     normal           
+  [Low4/64]mod3n(5):(2,9-6)         R=  +0.0  p = 0.438     normal           
+  [Low4/64]mod3n(5):(3,9-6)         R=  +0.3  p = 0.382     normal           
+  [Low4/64]mod3n(5):(4,9-6)         R=  +2.4  p = 0.108     normal           
+  [Low4/64]mod3n(5):(5,9-6)         R=  -2.9  p = 0.974     normal           
+  [Low4/64]mod3n(5):(6,9-6)         R=  -1.0  p = 0.677     normal           
+  [Low4/64]mod3n(5):(7,9-6)         R=  +4.8  p = 0.019     normal           
+  [Low4/64]mod3n(5):(8,9-6)         R=  +5.0  p = 0.016     normal           
+  [Low4/64]mod3n(5):(9,9-6)         R=  +2.0  p = 0.138     normal           
+  [Low4/64]mod3n(5):(10,9-6)        R=  +1.7  p = 0.170     normal           
+  [Low4/64]mod3n(5):(11,9-6)        R=  -1.6  p = 0.806     normal           
+  [Low4/64]mod3n(5):(12,9-6)        R=  -1.4  p = 0.764     normal           
+  [Low4/64]mod3n(5):(13,9-6)        R=  +1.6  p = 0.183     normal           
+  [Low4/64]mod3n(5):(14,9-6)        R=  +1.1  p = 0.247     normal           
+  [Low4/64]mod3n(5):(15,9-6)        R=  -0.7  p = 0.601     normal           
+  [Low4/64]TMFn(2+0):wl             R=  +2.3  p~= 0.2       normal           
+  [Low4/64]TMFn(2+1):wl             R=  -1.3  p~= 0.7       normal           
+  [Low4/64]TMFn(2+2):wl             R=  -0.1  p~= 0.5       normal           
+  [Low4/64]TMFn(2+3):wl             R=  +0.9  p~= 0.4       normal           
+  [Low4/64]TMFn(2+4):wl             R=  +4.1  p~= 0.1       normal           
+  [Low4/64]TMFn(2+5):wl             R=  -0.4  p~= 0.6       normal           
+  [Low4/64]TMFn(2+6):wl             R=  +0.4  p~= 0.4       normal           
+  [Low4/64]TMFn(2+7):wl             R=  -1.1  p~= 0.7       normal           
+  [Low4/64]TMFn(2+8):wl             R=  +2.1  p~= 0.2       normal           
+  [Low4/64]TMFn(2+9):wl             R=  +1.4  p~= 0.3       normal           
+  [Low4/64]TMFn(2+10):wl            R=  +1.3  p~= 0.3       normal           
+  [Low4/64]TMFn(2+11):wl            R=  +2.6  p~= 0.2       normal           
+  [Low4/64]TMFn(2+12):wl            R=  +1.6  p~= 0.3       normal           
+  [Low4/64]TMFn(2+13):wl            R=  +0.1  p~= 0.5       normal           
+  [Low1/64]BCFN(2+0,13-0,T)         R=  +2.6  p = 0.144     normal           
+  [Low1/64]BCFN(2+1,13-0,T)         R=  -1.4  p = 0.718     normal           
+  [Low1/64]BCFN(2+2,13-0,T)         R=  +4.8  p = 0.028     normal           
+  [Low1/64]BCFN(2+3,13-0,T)         R=  -4.0  p = 0.951     normal           
+  [Low1/64]BCFN(2+4,13-0,T)         R=  +3.0  p = 0.112     normal           
+  [Low1/64]BCFN(2+5,13-0,T)         R=  -0.5  p = 0.576     normal           
+  [Low1/64]BCFN(2+6,13-0,T)         R=  -0.3  p = 0.545     normal           
+  [Low1/64]BCFN(2+7,13-0,T)         R=  -0.3  p = 0.547     normal           
+  [Low1/64]BCFN(2+8,13-0,T)         R=  -3.5  p = 0.926     normal           
+  [Low1/64]BCFN(2+9,13-0,T)         R=  -0.5  p = 0.573     normal           
+  [Low1/64]BCFN(2+10,13-0,T)        R=  +0.3  p = 0.442     normal           
+  [Low1/64]BCFN(2+11,13-1,T)        R=  +1.4  p = 0.276     normal           
+  [Low1/64]BCFN(2+12,13-1,T)        R=  -4.4  p = 0.968     normal           
+  [Low1/64]BCFN(2+13,13-2,T)        R=  -1.7  p = 0.749     normal           
+  [Low1/64]BCFN(2+14,13-3,T)        R=  -1.5  p = 0.719     normal           
+  [Low1/64]BCFN(2+15,13-3,T)        R=  -2.7  p = 0.865     normal           
+  [Low1/64]BCFN(2+16,13-4,T)        R=  +1.2  p = 0.294     normal           
+  [Low1/64]BCFN(2+17,13-5,T)        R=  -2.0  p = 0.797     normal           
+  [Low1/64]BCFN(2+18,13-5,T)        R=  -1.4  p = 0.701     normal           
+  [Low1/64]BCFN(2+19,13-6,T)        R=  +0.6  p = 0.362     normal           
+  [Low1/64]BCFN(2+20,13-6,T)        R=  +0.8  p = 0.343     normal           
+  [Low1/64]BCFN(2+21,13-7,T)        R=  +0.4  p = 0.385     normal           
+  [Low1/64]BCFN(2+22,13-8,T)        R=  -2.1  p = 0.821     normal           
+  [Low1/64]BCFN(2+23,13-8,T)        R=  -2.2  p = 0.850     normal           
+  [Low1/64]BCFN(2+24,13-9,T)        R=  -1.1  p = 0.637     normal           
+  [Low1/64]BCFN(2+25,13-9,T)        R=  -0.3  p = 0.462     normal           
+  [Low1/64]DC6-9x1Bytes-1           R=  +0.9  p = 0.369     normal           
+  [Low1/64]Gap-16:A                 R=  +0.2  p = 0.508     normal           
+  [Low1/64]Gap-16:B                 R=  +2.3  p = 0.056     normal           
+  [Low1/64]FPF-14+6/16:(0,14-0)     R=  -0.7  p = 0.694     normal           
+  [Low1/64]FPF-14+6/16:(1,14-0)     R=  -1.5  p = 0.854     normal           
+  [Low1/64]FPF-14+6/16:(2,14-0)     R=  +0.4  p = 0.390     normal           
+  [Low1/64]FPF-14+6/16:(3,14-0)     R=  -0.5  p = 0.646     normal           
+  [Low1/64]FPF-14+6/16:(4,14-0)     R=  -0.9  p = 0.749     normal           
+  [Low1/64]FPF-14+6/16:(5,14-0)     R=  -1.2  p = 0.794     normal           
+  [Low1/64]FPF-14+6/16:(6,14-0)     R=  -3.5  p =1-6.3e-3   normal           
+  [Low1/64]FPF-14+6/16:(7,14-0)     R=  -0.7  p = 0.684     normal           
+  [Low1/64]FPF-14+6/16:(8,14-0)     R=  +1.2  p = 0.206     normal           
+  [Low1/64]FPF-14+6/16:(9,14-0)     R=  -1.4  p = 0.845     normal           
+  [Low1/64]FPF-14+6/16:(10,14-0)    R=  +1.7  p = 0.123     normal           
+  [Low1/64]FPF-14+6/16:(11,14-0)    R=  +1.0  p = 0.235     normal           
+  [Low1/64]FPF-14+6/16:(12,14-0)    R=  +2.9  p = 0.020     normal           
+  [Low1/64]FPF-14+6/16:(13,14-0)    R=  -2.4  p = 0.956     normal           
+  [Low1/64]FPF-14+6/16:(14,14-0)    R=  -1.5  p = 0.862     normal           
+  [Low1/64]FPF-14+6/16:(15,14-1)    R=  -0.3  p = 0.603     normal           
+  [Low1/64]FPF-14+6/16:(16,14-2)    R=  +3.3  p = 0.010     normal           
+  [Low1/64]FPF-14+6/16:(17,14-2)    R=  +0.4  p = 0.397     normal           
+  [Low1/64]FPF-14+6/16:(18,14-3)    R=  +0.8  p = 0.281     normal           
+  [Low1/64]FPF-14+6/16:(19,14-4)    R=  -0.4  p = 0.605     normal           
+  [Low1/64]FPF-14+6/16:(20,14-5)    R=  +1.9  p = 0.096     normal           
+  [Low1/64]FPF-14+6/16:(21,14-5)    R=  -3.6  p =1-3.5e-3   normal           
+  [Low1/64]FPF-14+6/16:(22,14-6)    R=  +1.7  p = 0.119     normal           
+  [Low1/64]FPF-14+6/16:(23,14-7)    R=  +1.1  p = 0.211     normal           
+  [Low1/64]FPF-14+6/16:(24,14-8)    R=  -0.5  p = 0.629     normal           
+  [Low1/64]FPF-14+6/16:(25,14-8)    R=  +1.7  p = 0.126     normal           
+  [Low1/64]FPF-14+6/16:(26,14-9)    R=  -0.0  p = 0.478     normal           
+  [Low1/64]FPF-14+6/16:(27,14-10)   R=  -0.5  p = 0.602     normal           
+  [Low1/64]FPF-14+6/16:(28,14-11)   R=  -1.6  p = 0.906     normal           
+  [Low1/64]FPF-14+6/16:(29,14-11)   R=  -1.7  p = 0.925     normal           
+  [Low1/64]FPF-14+6/16:all          R=  -1.3  p = 0.835     normal           
+  [Low1/64]FPF-14+6/16:cross        R=  +1.9  p = 0.042     normal           
+  [Low1/64]BRank(12):128(16)        R=  -0.0  p~= 0.470     normal           
+  [Low1/64]BRank(12):256(16)        R=  +0.9  p~= 0.180     normal           
+  [Low1/64]BRank(12):384(4)         R=  -0.2  p~= 0.500     normal           
+  [Low1/64]BRank(12):512(8)         R=  +0.2  p~= 0.360     normal           
+  [Low1/64]BRank(12):768(2)         R=  -0.2  p~= 0.554     normal           
+  [Low1/64]BRank(12):1K(8)          R=  +0.6  p~= 0.250     normal           
+  [Low1/64]BRank(12):1536(2)        R=  -0.2  p~= 0.554     normal           
+  [Low1/64]BRank(12):2K(4)          R=  -1.4  p~= 0.890     normal           
+  [Low1/64]BRank(12):3K(1)          R=  +0.4  p~= 0.366     normal           
+  [Low1/64]BRank(12):4K(4)          R=  +0.4  p~= 0.340     normal           
+  [Low1/64]BRank(12):6K(1)          R=  +0.4  p~= 0.366     normal           
+  [Low1/64]BRank(12):8K(2)          R=  -1.0  p~= 0.744     normal           
+  [Low1/64]BRank(12):12K(1)         R=  +0.4  p~= 0.366     normal           
+  [Low1/64]BRank(12):16K(2)         R=  +0.6  p~= 0.322     normal           
+  [Low1/64]BRank(12):24K(1)         R=  -0.7  p~= 0.689     normal           
+  [Low1/64]mod3n(5):(0,9-6)         R=  -0.6  p = 0.578     normal           
+  [Low1/64]mod3n(5):(1,9-6)         R=  +1.0  p = 0.257     normal           
+  [Low1/64]mod3n(5):(2,9-6)         R=  +1.3  p = 0.212     normal           
+  [Low1/64]mod3n(5):(3,9-6)         R=  +8.0  p =  1.3e-3   normalish       
+  [Low1/64]mod3n(5):(4,9-6)         R=  +1.2  p = 0.232     normal           
+  [Low1/64]mod3n(5):(5,9-6)         R=  +6.6  p =  4.1e-3   normal           
+  [Low1/64]mod3n(5):(6,9-6)         R=  +0.9  p = 0.280     normal           
+  [Low1/64]mod3n(5):(7,9-6)         R=  -1.4  p = 0.756     normal           
+  [Low1/64]mod3n(5):(8,9-6)         R=  -1.1  p = 0.696     normal           
+  [Low1/64]mod3n(5):(9,9-6)         R=  +1.5  p = 0.195     normal           
+  [Low1/64]mod3n(5):(10,9-6)        R=  +0.2  p = 0.397     normal           
+  [Low1/64]mod3n(5):(11,9-6)        R=  +2.2  p = 0.125     normal           
+  [Low1/64]mod3n(5):(12,9-6)        R=  -1.1  p = 0.705     normal           
+  [Low1/64]mod3n(5):(13,9-6)        R=  +1.5  p = 0.194     normal           
+  [Low1/64]mod3n(5):(14,9-6)        R=  +4.5  p = 0.024     normal           
+  [Low1/64]mod3n(5):(15,9-6)        R=  +0.9  p = 0.282     normal           
+  [Low1/64]TMFn(2+0):wl             R=  -0.9  p~= 0.6       normal           
+  [Low1/64]TMFn(2+1):wl             R=  -6.1  p~= 0.94      normal           
+  [Low1/64]TMFn(2+2):wl             R=  +0.6  p~= 0.4       normal           
+  [Low1/64]TMFn(2+3):wl             R=  -2.2  p~= 0.8       normal           
+  [Low1/64]TMFn(2+4):wl             R=  -1.4  p~= 0.7       normal           
+  [Low1/64]TMFn(2+5):wl             R=  -1.2  p~= 0.7       normal           
+  [Low1/64]TMFn(2+6):wl             R=  +0.8  p~= 0.4       normal           
+  [Low1/64]TMFn(2+7):wl             R=  +0.8  p~= 0.4       normal           
+  [Low1/64]TMFn(2+8):wl             R=  +0.6  p~= 0.4       normal           
+  [Low1/64]TMFn(2+9):wl             R=  +0.2  p~= 0.5       normal           
+  [Low1/64]TMFn(2+10):wl            R=  +2.7  p~= 0.2       normal           
+  [Low1/64]TMFn(2+11):wl            R=  -0.0  p~= 0.5       normal           
+  [Low1/64]TMFn(2+12):wl            R=  -1.0  p~= 0.6       normal           
+  [Low1/64]TMFn(2+13):wl            R=  +2.4  p~= 0.2       normal           
+
