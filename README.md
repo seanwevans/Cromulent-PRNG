@@ -149,11 +149,3 @@ The generator uses a carefully designed output mixing function to improve statis
 ### Jump Operations
 
 The library supports jump-ahead operations, allowing you to efficiently advance the state by 2^64 steps. This is useful for creating independent, non-overlapping streams for parallel applications.
-
-## License
-
-[License information not provided in the source files]
-
-## Contributors
-
-[Contributor information not provided in the source files]
