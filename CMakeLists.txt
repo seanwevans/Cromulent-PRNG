@@ -52,3 +52,11 @@ install(TARGETS cromulent
         RUNTIME DESTINATION bin)
 
 install(DIRECTORY include/ DESTINATION include)
+
+add_subdirectory(tests/unit)
+
+add_custom_target(check
+    COMMAND ${CMAKE_CTEST_COMMAND} -V
+    DEPENDS sanity test_jump test_save test_load
+    COMMENT "Running all tests (sanity and unit tests)"
+)
