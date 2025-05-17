@@ -115,7 +115,10 @@ The library includes a micro-benchmark tool (`bench_micro`) that measures the pe
 
 ```
 running 10000000000 samples with seed 69420
-cromulent128   : 0.73 ns/sample
+xoshiro256     : 4.00 ns/sample, dummy=15115886174096218845
+cromulent128   : 2.93 ns/sample, dummy=8577353182525494841
+splitmix64     : 1.27 ns/sample, dummy=12147880745723112187
+pcg64          : 1.76 ns/sample, dummy=13280616445415795540
 ```
 
 Exact numbers will vary based on your hardware.
