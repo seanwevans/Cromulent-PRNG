@@ -1,3 +1,5 @@
+![Perfectly Cromulent](assets/cromulent.png)
+
 # Cromulent PRNG
 
 A modern Pseudo-Random Number Generator (PRNG) implemented in C.
