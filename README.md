@@ -1,4 +1,4 @@
-<img src="assets/cromulent.jpg" height="100px">
+<img src="assets/cromulent.png" height="100px">
 # Cromulent PRNG
 
 A modern Pseudo-Random Number Generator (PRNG) implemented in C.
