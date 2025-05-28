@@ -3,7 +3,7 @@
 # Cromulent PRNG
 
 A modern Pseudo-Random Number Generator (PRNG) implemented in C.
-`PractRand` 64TB test results [here](tests/results/practrand64TB.txt)
+`PractRand` 128TB test results [here](tests/results/practrand128TB.txt)
 
 ## Overview
 
