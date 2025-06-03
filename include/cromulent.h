@@ -8,6 +8,10 @@
 #include <stdint.h>
 #include <string.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 typedef struct cromulent_state {
   uint64_t s0;
   uint64_t s1;
@@ -23,9 +27,11 @@ typedef struct {
   uint64_t (*next)(void);
 } CromulentPRNG;
 
+#if defined(__AVX2__)
 typedef struct {
   __m256i s0, s1;
 } cromulent_avx2_state;
+#endif
 
 void cromulent_init(cromulent_state *state, uint64_t seed);
 uint64_t cromulent_next(cromulent_state *state);
@@ -37,5 +43,19 @@ void cromulent_save(const cromulent_state *state, uint8_t *buffer);
 void cromulent_load(cromulent_state *state, const uint8_t *buffer);
 const CromulentPRNG *cromulent_registry_find(const char *name);
 const CromulentPRNG *cromulent_registry_all(size_t *count_out);
+
+// Reference implementations
+void init_splitmix64(uint64_t seed);
+uint64_t splitmix64pp(void);
+void init_pcg64(uint64_t seed);
+uint64_t pcg64pp(void);
+void init_xoshiro(uint64_t seed);
+uint64_t xoshiro256pp(void);
+void init_cromulent(uint64_t seed);
+uint64_t cromulent128pp(void);
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
 
 #endif // CROMULENT_H

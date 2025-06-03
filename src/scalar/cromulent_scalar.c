@@ -75,7 +75,6 @@ void cromulent_jump(cromulent_state *state) {
   // Matrix exponentiation for jumping
   // These constants represent [M^(2^64)] where M is the state transition matrix
   const uint64_t jump_a = SC1;
-  const uint64_t jump_b = SC2;
 
   uint64_t s0 = 0;
   uint64_t s1 = 0;
