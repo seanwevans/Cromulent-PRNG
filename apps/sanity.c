@@ -32,21 +32,23 @@ int main(void) {
 
     // round-trip
     if (strcmp(g->name, "cromulent128") == 0) {
-      cromulent_state st;
-      cromulent_init(&st, 0xDEADBEEF);
-      uint64_t first5[5];
-      for (int j = 0; j < 5; ++j)
-        first5[j] = cromulent_next(&st);
+    cromulent_state st;
+    cromulent_init(&st, 0xDEADBEEF);
 
-      uint8_t buf[16];
-      cromulent_save(&st, buf);
+    for (int j = 0; j < 5; ++j)
+      cromulent_next(&st); // warm up
 
-      for (int j = 0; j < 5; ++j)
-        cromulent_next(&st);
-      cromulent_load(&st, buf);
+    uint8_t buf[16];
+    cromulent_save(&st, buf);
 
-      for (int j = 0; j < 5; ++j)
-        CHECK_EQ(first5[j], cromulent_next(&st));
+    uint64_t expected[5];
+    for (int j = 0; j < 5; ++j)
+      expected[j] = cromulent_next(&st);
+
+    cromulent_load(&st, buf);
+
+    for (int j = 0; j < 5; ++j)
+      CHECK_EQ(expected[j], cromulent_next(&st));
     }
 
     puts("ok");

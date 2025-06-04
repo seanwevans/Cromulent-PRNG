@@ -8,18 +8,6 @@
 #include <stddef.h>
 #include <string.h>
 
-void init_xoshiro(uint64_t);
-uint64_t xoshiro256pp(void);
-
-void init_cromulent(uint64_t);
-uint64_t cromulent128pp(void);
-
-void init_splitmix64(uint64_t);
-uint64_t splitmix64pp(void);
-
-void init_pcg64(uint64_t);
-uint64_t pcg64pp(void);
-
 static const CromulentPRNG registry[] = {
     {"xoshiro256", init_xoshiro, xoshiro256pp},
     {"cromulent128", init_cromulent, cromulent128pp},
