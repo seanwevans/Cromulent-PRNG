@@ -2,6 +2,7 @@
 
 #include "cromulent.h"
 #include <stdint.h>
+#include <inttypes.h>
 #include <stdio.h>
 #include <time.h>
 
@@ -36,7 +37,7 @@ void benchmark(const char *name, void (*init)(uint64_t), uint64_t (*next)(void),
 int main(void) {
   uint64_t seed = 69420;
 
-  printf("running %llu samples with seed %ld\n", NUM_SAMPLES, seed);
+  printf("running %llu samples with seed %" PRIu64 "\n", NUM_SAMPLES, seed);
   benchmark("xoshiro256", init_xoshiro, xoshiro256pp, seed);
   benchmark("cromulent128", init_cromulent, cromulent128pp, seed);
   benchmark("splitmix64", init_splitmix64, splitmix64pp, seed);
