@@ -25,11 +25,20 @@ static inline __m256i rotl_avx2(__m256i x, int k) {
   return _mm256_or_si256(_mm256_slli_epi64(x, k), _mm256_srli_epi64(x, 64 - k));
 }
 
+static inline __m256i mullo_epi64_avx2(__m256i a, __m256i b) {
+  __m256i albl = _mm256_mul_epu32(a, b);
+  __m256i albh = _mm256_mul_epu32(a, _mm256_srli_epi64(b, 32));
+  __m256i ahbl = _mm256_mul_epu32(_mm256_srli_epi64(a, 32), b);
+  __m256i cross = _mm256_add_epi64(albh, ahbl);
+  cross = _mm256_slli_epi64(cross, 32);
+  return _mm256_add_epi64(albl, cross);
+}
+
 static inline __m256i mix_avx2(__m256i x) {
   x = _mm256_xor_si256(x, _mm256_srli_epi64(x, 33));
-  x = _mm256_mullo_epi64(x, _mm256_set1_epi64x(0xff51afd7ed558ccdULL));
+  x = mullo_epi64_avx2(x, _mm256_set1_epi64x(0xff51afd7ed558ccdULL));
   x = _mm256_xor_si256(x, _mm256_srli_epi64(x, 33));
-  x = _mm256_mullo_epi64(x, _mm256_set1_epi64x(0xc4ceb9fe1a85ec53ULL));
+  x = mullo_epi64_avx2(x, _mm256_set1_epi64x(0xc4ceb9fe1a85ec53ULL));
   x = _mm256_xor_si256(x, _mm256_srli_epi64(x, 33));
   return x;
 }
