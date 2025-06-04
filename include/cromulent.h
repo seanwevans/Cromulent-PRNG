@@ -39,7 +39,9 @@ double cromulent_double(cromulent_state *state);
 float cromulent_float(cromulent_state *state);
 void cromulent_jump(cromulent_state *state);
 uint64_t cromulent_range(cromulent_state *state, uint64_t n);
+// Save the PRNG state to a 16-byte buffer in little-endian order
 void cromulent_save(const cromulent_state *state, uint8_t *buffer);
+// Load the state from a 16-byte buffer written by cromulent_save
 void cromulent_load(cromulent_state *state, const uint8_t *buffer);
 const CromulentPRNG *cromulent_registry_find(const char *name);
 const CromulentPRNG *cromulent_registry_all(size_t *count_out);

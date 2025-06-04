@@ -2,6 +2,22 @@
 
 #include "cromulent.h"
 
+static void store_le64(uint8_t *out, uint64_t x) {
+  for (int i = 0; i < 8; i++) {
+    out[i] = (uint8_t)(x & 0xff);
+    x >>= 8;
+  }
+}
+
+static uint64_t load_le64(const uint8_t *in) {
+  uint64_t x = 0;
+  for (int i = 7; i >= 0; i--) {
+    x <<= 8;
+    x |= in[i];
+  }
+  return x;
+}
+
 void cromulent_init(cromulent_state *state, const uint64_t seed) {
   uint64_t z = seed;
 
@@ -109,11 +125,11 @@ uint64_t cromulent_range(cromulent_state *state, uint64_t n) {
 }
 
 void cromulent_save(const cromulent_state *state, uint8_t *buffer) {
-  memcpy(buffer, &state->s0, sizeof(uint64_t));
-  memcpy(buffer + sizeof(uint64_t), &state->s1, sizeof(uint64_t));
+  store_le64(buffer, state->s0);
+  store_le64(buffer + sizeof(uint64_t), state->s1);
 }
 
 void cromulent_load(cromulent_state *state, const uint8_t *buffer) {
-  memcpy(&state->s0, buffer, sizeof(uint64_t));
-  memcpy(&state->s1, buffer + sizeof(uint64_t), sizeof(uint64_t));
+  state->s0 = load_le64(buffer);
+  state->s1 = load_le64(buffer + sizeof(uint64_t));
 }
