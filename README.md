@@ -98,6 +98,10 @@ cromulent_load(&state, buffer);
 // Continue generating the same sequence from this point
 ```
 
+`cromulent_save` writes the two 64-bit words of the PRNG state in
+little-endian byte order.  The data in `buffer` is therefore portable
+between platforms with different native endianness.
+
 ### Using the Generator Registry
 
 The library maintains a registry system primarily for internal benchmarking and testing, but it can also be used in applications:
