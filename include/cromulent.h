@@ -31,6 +31,9 @@ typedef struct {
 typedef struct {
   __m256i s0, s1;
 } cromulent_avx2_state;
+
+void cromulent_avx2_init(cromulent_avx2_state *state, uint64_t seed);
+__m256i cromulent_avx2_next(cromulent_avx2_state *state);
 #endif
 
 void cromulent_init(cromulent_state *state, uint64_t seed);
