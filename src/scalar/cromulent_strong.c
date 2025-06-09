@@ -22,3 +22,17 @@ uint64_t cromulent_strong_next(cromulent_strong_state *state) {
 
   return mix_fast(output);
 }
+
+void cromulent_strong_init(cromulent_strong_state *st, uint64_t seed) {
+  uint64_t z = seed;
+
+  z += C1;
+  z = (z ^ (z >> 30)) * C2;
+  z = (z ^ (z >> 27)) * C3;
+  st->a = z ^ (z >> 31);
+
+  z += C1;
+  z = (z ^ (z >> 30)) * C2;
+  z = (z ^ (z >> 27)) * C3;
+  st->b = z ^ (z >> 31);
+}
