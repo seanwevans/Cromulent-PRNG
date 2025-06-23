@@ -30,6 +30,7 @@ Cromulent PRNG is a portable C library providing a high-quality random number ge
 - C11 compatible compiler
 - CMake 3.19 or higher
 - (Optional) AVX2 support for SIMD acceleration
+- (Optional) 128-bit integer support (`__uint128_t`) for faster range generation
 
 ## Building
 
@@ -79,10 +80,12 @@ int main() {
     // Generate a random integer in range [0, 99]
     uint64_t rand_range = cromulent_range(&state, 100);
     printf("Random in range [0, 99]: %lu\n", rand_range);
-    
+
     return 0;
 }
 ```
+
+The `cromulent_range` function relies on 128-bit integer arithmetic when the compiler provides `__uint128_t`. A portable 64-bit implementation is used as a fallback.
 
 ### Saving and Loading State
 
