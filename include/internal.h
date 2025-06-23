@@ -16,7 +16,6 @@
 #define C6 0xd1342543de82ef95ULL
 
 #define SC1 0x3b22c4a0c50de29bULL
-#define SC2 0x5e4d93b362c7f62aULL
 
 #define MH3 0xd6e8feb86659fd93ULL
 
