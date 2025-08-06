@@ -13,22 +13,19 @@ static const CromulentPRNG registry[] = {
     {"cromulent128", init_cromulent, cromulent128pp},
     {"splitmix64", init_splitmix64, splitmix64pp},
     {"pcg64", init_pcg64, pcg64pp},
-    {NULL, NULL, NULL} // sentinel
 };
 
+#define REGISTRY_COUNT (sizeof(registry) / sizeof(registry[0]))
+
 const CromulentPRNG *cromulent_registry_find(const char *name) {
-  for (size_t i = 0; registry[i].name; ++i)
+  for (size_t i = 0; i < REGISTRY_COUNT; ++i)
     if (strcmp(registry[i].name, name) == 0)
       return &registry[i];
   return NULL; // not found
 }
 
 const CromulentPRNG *cromulent_registry_all(size_t *count_out) {
-  if (count_out) {
-    size_t n = 0;
-    while (registry[n].name)
-      ++n;
-    *count_out = n;
-  }
+  if (count_out)
+    *count_out = REGISTRY_COUNT;
   return registry;
 }
