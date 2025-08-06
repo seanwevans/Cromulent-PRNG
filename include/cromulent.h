@@ -38,6 +38,7 @@ __m256i cromulent_avx2_next(cromulent_avx2_state *state);
 
 void cromulent_init(cromulent_state *state, uint64_t seed);
 void cromulent_strong_init(cromulent_strong_state *st, uint64_t seed);
+uint64_t cromulent_strong_next(cromulent_strong_state *state);
 uint64_t cromulent_next(cromulent_state *state);
 double cromulent_double(cromulent_state *state);
 float cromulent_float(cromulent_state *state);

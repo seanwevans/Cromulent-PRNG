@@ -9,9 +9,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-// cromulent_strong_next is not declared in the public header
-extern uint64_t cromulent_strong_next(cromulent_strong_state *state);
-
 // For simplicity, define a check macro that prints error info
 #define CHECK(cond, msg) do { \
     if (!(cond)) { \
