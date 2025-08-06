@@ -16,5 +16,5 @@ uint64_t pcg64pp(void) {
   pcg_state = oldstate * 6364136223846793005ULL + pcg_inc;
   uint64_t xorshifted = ((oldstate >> 18u) ^ oldstate) >> 27u;
   uint64_t rot = oldstate >> 59u;
-  return (xorshifted >> rot) | (xorshifted << ((-rot) & 31));
+  return (xorshifted >> rot) | (xorshifted << ((-rot) & 63));
 }
