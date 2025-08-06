@@ -109,6 +109,9 @@ void cromulent_jump(cromulent_state *state) {
 
 #ifdef __SIZEOF_INT128__
 uint64_t cromulent_range(cromulent_state *state, uint64_t n) {
+  // Generate a uniform random number in [0, n). Returns 0 when n is 0.
+  if (n == 0)
+    return 0;
   uint64_t x = cromulent_next(state);
   __uint128_t m = (__uint128_t)x * n;
   uint64_t l = (uint64_t)m;
@@ -142,6 +145,9 @@ static void mul_u64(uint64_t a, uint64_t b, uint64_t *hi, uint64_t *lo) {
 }
 
 uint64_t cromulent_range(cromulent_state *state, uint64_t n) {
+  // Generate a uniform random number in [0, n). Returns 0 when n is 0.
+  if (n == 0)
+    return 0;
   uint64_t x = cromulent_next(state);
   uint64_t hi, lo;
   mul_u64(x, n, &hi, &lo);
