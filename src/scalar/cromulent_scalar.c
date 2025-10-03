@@ -11,9 +11,8 @@ static void store_le64(uint8_t *out, uint64_t x) {
 
 static uint64_t load_le64(const uint8_t *in) {
   uint64_t x = 0;
-  for (int i = 7; i >= 0; i--) {
-    x <<= 8;
-    x |= in[i];
+  for (int i = 0; i < 8; i++) {
+    x |= ((uint64_t)in[i]) << (8 * i);
   }
   return x;
 }
