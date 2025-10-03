@@ -24,14 +24,24 @@ int test_load_basic() {
     
     cromulent_state st_original, st_loaded;
     cromulent_init(&st_original, 0xDEADBEEFCAFEBABEULL);
-    
+
     // Save the original state
     uint8_t buffer[16];
     cromulent_save(&st_original, buffer);
-    
+
+    // Verify the serialized bytes are little-endian representations
+    uint8_t expected[16];
+    for (int i = 0; i < 8; i++) {
+        expected[i] = (uint8_t)(st_original.s0 >> (8 * i));
+        expected[8 + i] = (uint8_t)(st_original.s1 >> (8 * i));
+    }
+
+    CHECK(memcmp(buffer, expected, sizeof(expected)) == 0,
+          "Serialized state should use little-endian layout");
+
     // Initialize loaded state with a different seed
     cromulent_init(&st_loaded, 0x0000000000000000ULL);
-    
+
     // Load the saved state
     cromulent_load(&st_loaded, buffer);
     
