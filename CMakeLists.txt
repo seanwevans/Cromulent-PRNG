@@ -28,14 +28,11 @@ check_c_compiler_flag(-mavx2 HAS_AVX2)
 
 if (CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64|amd64" AND HAS_AVX2)
     list(APPEND CROMULENT_SRCS src/simd/cromulent_avx2.c)
+    set_source_files_properties(src/simd/cromulent_avx2.c PROPERTIES COMPILE_OPTIONS "-mavx2")
 endif ()
 
 add_library(cromulent STATIC ${CROMULENT_SRCS})
 target_include_directories(cromulent PUBLIC ${PROJECT_SOURCE_DIR}/include)
-
-if (CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64|amd64" AND HAS_AVX2)
-    target_compile_options(cromulent PRIVATE -mavx2)
-endif ()
 
 add_executable(bench_micro apps/bench_micro.c)
 target_link_libraries(bench_micro cromulent)
