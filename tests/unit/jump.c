@@ -18,6 +18,66 @@
     } \
 } while (0)
 
+static void apply_jump_words(const cromulent_state *base, const uint64_t jump[2],
+                             cromulent_state *out) {
+    cromulent_state iter = *base;
+    uint64_t s0 = 0;
+    uint64_t s1 = 0;
+
+    for (int word = 0; word < 2; word++) {
+        const uint64_t bits = jump[word];
+        for (int bit = 0; bit < 64; bit++) {
+            if (bits & (1ULL << bit)) {
+                s0 ^= iter.s0;
+                s1 ^= iter.s1;
+            }
+            cromulent_next(&iter);
+        }
+    }
+
+    out->s0 = s0;
+    out->s1 = s1;
+}
+
+static void build_power_jump(uint32_t k, uint64_t jump_out[2]) {
+    const uint64_t steps = 1ULL << k;
+    jump_out[0] = 0;
+    jump_out[1] = 0;
+
+    if (steps < 64) {
+        jump_out[0] = 1ULL << steps;
+    } else {
+        assert(steps < 128);
+        jump_out[1] = 1ULL << (steps - 64);
+    }
+}
+
+int test_jump_polynomial_matches_iteration() {
+    printf("Testing jump polynomial wiring against iteration... ");
+
+    const uint32_t k = 6; // 2^6 = 64 steps, exercises bits in the second word
+    uint64_t jump_words[2];
+    build_power_jump(k, jump_words);
+    CHECK(jump_words[1] != 0, "Expected second word to contain the jump bit");
+
+    cromulent_state base;
+    cromulent_init(&base, 0xCAFEBABE12345678ULL);
+    cromulent_state jumped;
+    apply_jump_words(&base, jump_words, &jumped);
+
+    cromulent_state iterated = base;
+    const uint64_t steps = 1ULL << k;
+    for (uint64_t i = 0; i < steps; i++) {
+        cromulent_next(&iterated);
+    }
+
+    CHECK(jumped.s0 == iterated.s0 && jumped.s1 == iterated.s1,
+          "Jump polynomial should match iterated state");
+
+    printf("OK\n");
+    return 0;
+}
+
 // Test that jump actually advances the sequence
 int test_jump_advance() {
     printf("Testing jump advances the sequence... ");
@@ -144,6 +204,7 @@ int main() {
     printf("Running Cromulent PRNG jump tests\n");
     
     int result = 0;
+    result |= test_jump_polynomial_matches_iteration();
     result |= test_jump_advance();
     result |= test_stream_separation();
     result |= test_multiple_jumps();
