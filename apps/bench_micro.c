@@ -30,8 +30,8 @@ void benchmark(const char *name, void (*init)(uint64_t), uint64_t (*next)(void),
   clock_gettime(CLOCK_MONOTONIC, &end);
   double time_ns =
       (end.tv_sec - start.tv_sec) * 1e9 + (end.tv_nsec - start.tv_nsec);
-  printf("%-15s: %.2f ns/sample, dummy=%lu\n", name, time_ns / NUM_SAMPLES,
-         dummy);
+  printf("%-15s: %.2f ns/sample, dummy=%" PRIu64 "\n", name,
+         time_ns / NUM_SAMPLES, dummy);
 }
 
 int main(void) {
