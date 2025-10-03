@@ -32,6 +32,9 @@ typedef struct {
   __m256i s0, s1;
 } cromulent_avx2_state;
 
+// Callers must only dispatch to the AVX2 entry points when the CPU reports
+// support for the instruction set; the scalar implementations remain the
+// baseline fall-back.
 void cromulent_avx2_init(cromulent_avx2_state *state, uint64_t seed);
 __m256i cromulent_avx2_next(cromulent_avx2_state *state);
 #endif
