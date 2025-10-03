@@ -89,17 +89,20 @@ float cromulent_float(cromulent_state *state) {
 void cromulent_jump(cromulent_state *state) {
   // Matrix exponentiation for jumping
   // These constants represent [M^(2^64)] where M is the state transition matrix
-  const uint64_t jump_a = SC1;
+  const uint64_t jump_a[2] = {SC1, SC2};
 
   uint64_t s0 = 0;
   uint64_t s1 = 0;
 
-  for (int i = 0; i < 64; i++) {
-    if (jump_a & (1ULL << i)) {
-      s0 ^= state->s0;
-      s1 ^= state->s1;
+  for (int word = 0; word < 2; word++) {
+    const uint64_t bits = jump_a[word];
+    for (int i = 0; i < 64; i++) {
+      if (bits & (1ULL << i)) {
+        s0 ^= state->s0;
+        s1 ^= state->s1;
+      }
+      cromulent_next(state);
     }
-    cromulent_next(state);
   }
 
   state->s0 = s0;
