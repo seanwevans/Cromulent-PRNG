@@ -72,4 +72,35 @@ static inline uint64_t mix_fast(uint64_t x) {
   return x;
 }
 
+static inline void cromulent_mul_u64_fallback(uint64_t a, uint64_t b,
+                                              uint64_t *hi, uint64_t *lo) {
+  const uint64_t mask32 = 0xffffffffULL;
+  const uint64_t a_lo = a & mask32;
+  const uint64_t a_hi = a >> 32;
+  const uint64_t b_lo = b & mask32;
+  const uint64_t b_hi = b >> 32;
+
+  const uint64_t p0 = a_lo * b_lo;
+  const uint64_t p1 = a_lo * b_hi;
+  const uint64_t p2 = a_hi * b_lo;
+  const uint64_t p3 = a_hi * b_hi;
+
+  uint64_t low = p0;
+  uint64_t carry = 0;
+
+  const uint64_t cross1 = (p1 & mask32) << 32;
+  low += cross1;
+  if (low < cross1)
+    carry++;
+
+  const uint64_t cross2 = (p2 & mask32) << 32;
+  uint64_t new_low = low + cross2;
+  if (new_low < cross2)
+    carry++;
+
+  low = new_low;
+  *lo = low;
+  *hi = p3 + (p1 >> 32) + (p2 >> 32) + carry;
+}
+
 #endif // CROMULENT_INTERNAL
