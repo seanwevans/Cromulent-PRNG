@@ -1,4 +1,4 @@
-<img src="assets/cromulent.png" height="100px">
+<img width="256" alt="Cromulent-PRNG Geometric Glow Design" src="https://github.com/user-attachments/assets/946d69cd-0283-4493-b4dd-af4dcf88d8ca" /> <img src="assets/cromulent.png" height="100px">
 
 # Cromulent PRNG
 
