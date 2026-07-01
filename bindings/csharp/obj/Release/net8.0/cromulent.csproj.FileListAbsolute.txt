@@ -1,0 +1,14 @@
+/home/user/Cromulent-PRNG/bindings/csharp/bin/Release/net8.0/cromulent
+/home/user/Cromulent-PRNG/bindings/csharp/bin/Release/net8.0/cromulent.deps.json
+/home/user/Cromulent-PRNG/bindings/csharp/bin/Release/net8.0/cromulent.runtimeconfig.json
+/home/user/Cromulent-PRNG/bindings/csharp/bin/Release/net8.0/cromulent.dll
+/home/user/Cromulent-PRNG/bindings/csharp/bin/Release/net8.0/cromulent.pdb
+/home/user/Cromulent-PRNG/bindings/csharp/obj/Release/net8.0/cromulent.GeneratedMSBuildEditorConfig.editorconfig
+/home/user/Cromulent-PRNG/bindings/csharp/obj/Release/net8.0/cromulent.AssemblyInfoInputs.cache
+/home/user/Cromulent-PRNG/bindings/csharp/obj/Release/net8.0/cromulent.AssemblyInfo.cs
+/home/user/Cromulent-PRNG/bindings/csharp/obj/Release/net8.0/cromulent.csproj.CoreCompileInputs.cache
+/home/user/Cromulent-PRNG/bindings/csharp/obj/Release/net8.0/cromulent.dll
+/home/user/Cromulent-PRNG/bindings/csharp/obj/Release/net8.0/refint/cromulent.dll
+/home/user/Cromulent-PRNG/bindings/csharp/obj/Release/net8.0/cromulent.pdb
+/home/user/Cromulent-PRNG/bindings/csharp/obj/Release/net8.0/cromulent.genruntimeconfig.cache
+/home/user/Cromulent-PRNG/bindings/csharp/obj/Release/net8.0/ref/cromulent.dll
