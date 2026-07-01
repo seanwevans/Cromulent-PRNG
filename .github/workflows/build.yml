@@ -7,8 +7,8 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-    name: ${{ matrix.os }} / ${{ matrix.cc }}
+  c-cpp:
+    name: C/C++ ${{ matrix.os }} / ${{ matrix.cc }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -40,3 +40,61 @@ jobs:
 
       - name: Test
         run: ctest --test-dir build --output-on-failure --build-config Release
+
+  rust:
+    name: Rust
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Test
+        working-directory: bindings/rust
+        run: cargo test
+
+  go:
+    name: Go
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: 'stable'
+      - name: Test
+        working-directory: bindings/go
+        run: go test ./...
+
+  python:
+    name: Python
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Test
+        working-directory: bindings/python
+        run: python -m unittest -v
+
+  javascript:
+    name: JavaScript
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Test
+        working-directory: bindings/javascript
+        run: node --test
+
+  racket:
+    name: Racket
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Bogdanp/setup-racket@v1.11
+        with:
+          version: 'stable'
+      - name: Test
+        working-directory: bindings/racket
+        run: raco test cromulent.rkt

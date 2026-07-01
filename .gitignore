@@ -27,3 +27,12 @@ Testing/
 # Logs and temporary files
 *.log
 *.tmp
+
+# Language binding build artifacts
+bindings/rust/target/
+bindings/rust/Cargo.lock
+bindings/go/go.sum
+__pycache__/
+*.pyc
+node_modules/
+compiled/

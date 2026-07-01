@@ -23,6 +23,8 @@ Cromulent PRNG is a portable C library providing a high-quality random number ge
 
 - Built-in benchmarking and testing tools
 - Small footprint with minimal dependencies
+- Idiomatic ports in C++, Rust, Go, Python, JavaScript, and Racket — each
+  reproducing the C stream bit-for-bit (see [`bindings/`](bindings/README.md))
 
 ## Requirements
 
