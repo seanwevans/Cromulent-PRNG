@@ -23,14 +23,12 @@ __m256i cromulent_avx2_next(cromulent_avx2_state *state) {
   __m256i s1 = state->s1;
 
   state->s0 =
-      _mm256_add_epi64(mullo_epi64_avx2(s0, _mm256_set1_epi64x(0xd1342543de82ef95ULL)),
-                       s1);
-  state->s1 = _mm256_add_epi64(rotl_avx2(s1, 31), mix_avx2(s0));
+      _mm256_add_epi64(mullo_epi64_avx2(s0, _mm256_set1_epi64x(C6)), s1);
+  state->s1 = _mm256_add_epi64(rotl_avx2(s1, 31), mix_fast_avx2(s0));
 
   __m256i result = _mm256_add_epi64(s0, rotl_avx2(s1, 11));
   result = _mm256_xor_si256(result, _mm256_srli_epi64(result, 27));
-  result =
-      mullo_epi64_avx2(result, _mm256_set1_epi64x(0x94d049bb133111ebULL));
+  result = mullo_epi64_avx2(result, _mm256_set1_epi64x(C3));
   result = _mm256_xor_si256(result, _mm256_srli_epi64(result, 27));
 
   return result;

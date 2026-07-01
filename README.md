@@ -20,7 +20,7 @@ Cromulent PRNG is a portable C library providing a high-quality random number ge
   - Basic operations: initialization, next value
   - Utilities: uniform doubles/floats, bounded ranges
   - State management: save/load for reproducibility
-  - Jump-ahead functionality for stream separation
+  - Jump-based state decorrelation (best-effort sub-stream separation; see caveat below)
 
 - Built-in benchmarking and testing tools
 - Small footprint with minimal dependencies
@@ -161,4 +161,6 @@ The generator uses a carefully designed output mixing function to improve statis
 
 ### Jump Operations
 
-The library supports jump-ahead operations, allowing you to efficiently advance the state by 2^64 steps. This is useful for creating independent, non-overlapping streams for parallel applications.
+The library provides a `cromulent_jump` operation that cheaply advances the state to a distinct-looking sub-stream.
+
+> **Note:** This is *not* a proven 2^64 skip-ahead. The polynomial-style jump used here is only exact for GF(2)-linear generators (e.g. xoshiro); the cromulent recurrence is nonlinear, so `cromulent_jump` performs a deterministic state decorrelation rather than a verified jump. It does **not** guarantee non-overlapping streams and should not be relied upon for parallel-stream independence until a real skip-ahead for this recurrence is implemented.

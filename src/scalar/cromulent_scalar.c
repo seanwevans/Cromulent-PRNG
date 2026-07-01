@@ -87,8 +87,19 @@ float cromulent_float(cromulent_state *state) {
 }
 
 void cromulent_jump(cromulent_state *state) {
-  // Matrix exponentiation for jumping
-  // These constants represent [M^(2^64)] where M is the state transition matrix
+  // WARNING: This is NOT a proven 2^64 skip-ahead.
+  //
+  // The classic xoshiro/xorshift "jump polynomial" (advance one step per bit,
+  // XOR-accumulate the state where a polynomial bit is set) only yields a
+  // correct jump-ahead when the state transition is linear over GF(2). The
+  // cromulent recurrence is nonlinear (integer multiply + add in
+  // cromulent_next), so no such GF(2) matrix M exists and this procedure does
+  // NOT land 2^64 steps ahead. What it does provide is a deterministic,
+  // seed-dependent decorrelation of the state: it advances 128 steps and folds
+  // in a fixed subset of the visited states. It is suitable for cheaply
+  // deriving a distinct-looking sub-stream, but it does not guarantee that
+  // sub-streams are non-overlapping. Do not rely on it for parallel-stream
+  // independence until a real skip-ahead for this recurrence is implemented.
   const uint64_t jump_a[2] = {SC1, SC2};
 
   uint64_t s0 = 0;
