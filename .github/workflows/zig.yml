@@ -1,0 +1,22 @@
+name: Zig
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'bindings/zig/**', '.github/workflows/zig.yml' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ 'bindings/zig/**', '.github/workflows/zig.yml' ]
+
+jobs:
+  test:
+    name: zig test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: mlugg/setup-zig@v1
+        with:
+          version: 0.13.0
+      - name: Test
+        working-directory: bindings/zig
+        run: zig test cromulent.zig
