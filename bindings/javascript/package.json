@@ -1,0 +1,16 @@
+{
+  "name": "cromulent-prng",
+  "version": "0.1.0",
+  "description": "The Cromulent PRNG (JavaScript port of the scalar reference generator)",
+  "type": "module",
+  "main": "cromulent.mjs",
+  "exports": "./cromulent.mjs",
+  "scripts": {
+    "test": "node --test"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seanwevans/Cromulent-PRNG.git"
+  }
+}

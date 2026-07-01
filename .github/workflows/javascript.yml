@@ -1,0 +1,22 @@
+name: JavaScript
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'bindings/javascript/**', '.github/workflows/javascript.yml' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ 'bindings/javascript/**', '.github/workflows/javascript.yml' ]
+
+jobs:
+  test:
+    name: node --test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Test
+        working-directory: bindings/javascript
+        run: node --test
