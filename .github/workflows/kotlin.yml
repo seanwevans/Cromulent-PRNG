@@ -1,0 +1,27 @@
+name: Kotlin
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'bindings/kotlin/**', '.github/workflows/kotlin.yml' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ 'bindings/kotlin/**', '.github/workflows/kotlin.yml' ]
+
+jobs:
+  test:
+    name: kotlinc + run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: fwilhe2/setup-kotlin@main
+      - name: Compile
+        working-directory: bindings/kotlin
+        run: kotlinc src/Cromulent.kt src/Test.kt -include-runtime -d cromulent.jar
+      - name: Test
+        working-directory: bindings/kotlin
+        run: java -jar cromulent.jar
