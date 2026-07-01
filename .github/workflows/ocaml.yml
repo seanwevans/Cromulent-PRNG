@@ -1,0 +1,21 @@
+name: OCaml
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'bindings/ocaml/**', '.github/workflows/ocaml.yml' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ 'bindings/ocaml/**', '.github/workflows/ocaml.yml' ]
+
+jobs:
+  test:
+    name: ocamlc
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install OCaml
+        run: sudo apt-get update && sudo apt-get install -y ocaml
+      - name: Test
+        working-directory: bindings/ocaml
+        run: make test
