@@ -1,0 +1,21 @@
+name: Fortran
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'bindings/fortran/**', '.github/workflows/fortran.yml' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ 'bindings/fortran/**', '.github/workflows/fortran.yml' ]
+
+jobs:
+  test:
+    name: gfortran
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install gfortran
+        run: sudo apt-get update && sudo apt-get install -y gfortran
+      - name: Test
+        working-directory: bindings/fortran
+        run: make test
