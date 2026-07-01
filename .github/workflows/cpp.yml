@@ -1,0 +1,32 @@
+name: C++
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'bindings/cpp/**', 'src/**', 'include/**', '.github/workflows/cpp.yml' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ 'bindings/cpp/**', 'src/**', 'include/**', '.github/workflows/cpp.yml' ]
+
+jobs:
+  test:
+    name: ${{ matrix.os }} / ${{ matrix.cxx }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            cxx: g++
+          - os: ubuntu-latest
+            cxx: clang++
+    env:
+      CXX: ${{ matrix.cxx }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure
+        run: cmake -S bindings/cpp -B bindings/cpp/build -DCMAKE_BUILD_TYPE=Release
+      - name: Build
+        run: cmake --build bindings/cpp/build
+      - name: Test
+        run: ctest --test-dir bindings/cpp/build --output-on-failure
