@@ -1,0 +1,20 @@
+name: Crystal
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'bindings/crystal/**', '.github/workflows/crystal.yml' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ 'bindings/crystal/**', '.github/workflows/crystal.yml' ]
+
+jobs:
+  test:
+    name: crystal spec
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: crystal-lang/install-crystal@v1
+      - name: Test
+        working-directory: bindings/crystal
+        run: crystal spec
