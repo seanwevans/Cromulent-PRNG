@@ -1,0 +1,22 @@
+name: F#
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'bindings/fsharp/**', '.github/workflows/fsharp.yml' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ 'bindings/fsharp/**', '.github/workflows/fsharp.yml' ]
+
+jobs:
+  test:
+    name: dotnet run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Test
+        working-directory: bindings/fsharp
+        run: dotnet run -c Release
