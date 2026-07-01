@@ -69,28 +69,29 @@ int test_save_after_generation() {
     return 0;
 }
 
-// Test saving after jumping
-int test_save_after_jump() {
-    printf("Testing save after jump... ");
-    
+// Test saving after advancing the state
+int test_save_after_advance() {
+    printf("Testing save after advance... ");
+
     cromulent_state st;
     cromulent_init(&st, 0xA1B2C3D4E5F67890ULL);
-    
-    // Jump ahead
-    cromulent_jump(&st);
-    
+
+    // Advance the state
+    for (int i = 0; i < 10; i++)
+        cromulent_next(&st);
+
     // Save the state
     uint8_t buffer[16];
     cromulent_save(&st, buffer);
-    
+
     // Check saved values
     uint64_t saved_s0, saved_s1;
     memcpy(&saved_s0, buffer, sizeof(uint64_t));
     memcpy(&saved_s1, buffer + sizeof(uint64_t), sizeof(uint64_t));
-    
-    CHECK(saved_s0 == st.s0, "Saved s0 should match state s0 after jump");
-    CHECK(saved_s1 == st.s1, "Saved s1 should match state s1 after jump");
-    
+
+    CHECK(saved_s0 == st.s0, "Saved s0 should match state s0 after advance");
+    CHECK(saved_s1 == st.s1, "Saved s1 should match state s1 after advance");
+
     printf("OK\n");
     return 0;
 }
@@ -149,7 +150,7 @@ int main() {
     int result = 0;
     result |= test_save_basic();
     result |= test_save_after_generation();
-    result |= test_save_after_jump();
+    result |= test_save_after_advance();
     result |= test_save_consistency();
     result |= test_save_different_seeds();
     

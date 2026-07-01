@@ -113,16 +113,17 @@ int test_load_after_generation() {
     return 0;
 }
 
-// Test loading after jumping
-int test_load_after_jump() {
-    printf("Testing load after jump... ");
-    
+// Test loading after advancing the state
+int test_load_after_advance() {
+    printf("Testing load after advance... ");
+
     cromulent_state st1, st2;
     cromulent_init(&st1, 0x0123456789ABCDEFULL);
-    
-    // Jump ahead
-    cromulent_jump(&st1);
-    
+
+    // Advance the state
+    for (int i = 0; i < 10; i++)
+        cromulent_next(&st1);
+
     // Save the state
     uint8_t buffer[16];
     cromulent_save(&st1, buffer);
@@ -136,7 +137,7 @@ int test_load_after_jump() {
         uint64_t val1 = cromulent_next(&st1);
         uint64_t val2 = cromulent_next(&st2);
         
-        CHECK(val1 == val2, "States should produce identical sequences after loading jumped state");
+        CHECK(val1 == val2, "States should produce identical sequences after loading advanced state");
     }
     
     printf("OK\n");
@@ -227,7 +228,7 @@ int main() {
     result |= test_load_basic();
     result |= test_load_sequence();
     result |= test_load_after_generation();
-    result |= test_load_after_jump();
+    result |= test_load_after_advance();
     result |= test_multiple_save_load();
     result |= test_load_robustness();
     
