@@ -1,0 +1,22 @@
+name: C#
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'bindings/csharp/**', '.github/workflows/csharp.yml' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ 'bindings/csharp/**', '.github/workflows/csharp.yml' ]
+
+jobs:
+  test:
+    name: dotnet run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Test
+        working-directory: bindings/csharp
+        run: dotnet run -c Release
