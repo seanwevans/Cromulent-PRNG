@@ -1,0 +1,20 @@
+name: Rust
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'bindings/rust/**', '.github/workflows/rust.yml' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ 'bindings/rust/**', '.github/workflows/rust.yml' ]
+
+jobs:
+  test:
+    name: cargo test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Test
+        working-directory: bindings/rust
+        run: cargo test
