@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "5Bf+JxhzR4bY/VT0iJ37JwXmix2lEYweKONj9gm6NNfITTBqrwGmVkuPB4PWeI5rbMX556kfv/1cRHCyuAWK/g==",
+  "success": true,
+  "projectFilePath": "/home/user/Cromulent-PRNG/bindings/fsharp/cromulent.fsproj",
+  "expectedPackageFiles": [
+    "/root/.nuget/packages/fsharp.core/8.0.102/fsharp.core.8.0.102.nupkg.sha512"
+  ],
+  "logs": []
+}
