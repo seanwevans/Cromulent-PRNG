@@ -1,0 +1,26 @@
+name: Java
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'bindings/java/**', '.github/workflows/java.yml' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ 'bindings/java/**', '.github/workflows/java.yml' ]
+
+jobs:
+  test:
+    name: javac + run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Compile
+        working-directory: bindings/java
+        run: javac -d out $(find src -name '*.java')
+      - name: Test
+        working-directory: bindings/java
+        run: java -cp out com.cromulent.CromulentTest
