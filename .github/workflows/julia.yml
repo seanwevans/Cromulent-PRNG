@@ -1,0 +1,22 @@
+name: Julia
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'bindings/julia/**', '.github/workflows/julia.yml' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ 'bindings/julia/**', '.github/workflows/julia.yml' ]
+
+jobs:
+  test:
+    name: julia
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: julia-actions/setup-julia@v2
+        with:
+          version: '1'
+      - name: Test
+        working-directory: bindings/julia
+        run: julia test/runtests.jl
