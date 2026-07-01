@@ -1,0 +1,22 @@
+name: Racket
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'bindings/racket/**', '.github/workflows/racket.yml' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ 'bindings/racket/**', '.github/workflows/racket.yml' ]
+
+jobs:
+  test:
+    name: raco test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: Bogdanp/setup-racket@v1.11
+        with:
+          version: 'stable'
+      - name: Test
+        working-directory: bindings/racket
+        run: raco test cromulent.rkt
