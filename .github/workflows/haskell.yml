@@ -1,0 +1,22 @@
+name: Haskell
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'bindings/haskell/**', '.github/workflows/haskell.yml' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ 'bindings/haskell/**', '.github/workflows/haskell.yml' ]
+
+jobs:
+  test:
+    name: runghc
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: haskell-actions/setup@v2
+        with:
+          ghc-version: '9.4'
+      - name: Test
+        working-directory: bindings/haskell
+        run: runghc -isrc test/Spec.hs
