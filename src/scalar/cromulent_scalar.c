@@ -86,40 +86,6 @@ float cromulent_float(cromulent_state *state) {
   return (cromulent_next(state) >> 40) * 0x1.0p-24f;
 }
 
-void cromulent_jump(cromulent_state *state) {
-  // WARNING: This is NOT a proven 2^64 skip-ahead.
-  //
-  // The classic xoshiro/xorshift "jump polynomial" (advance one step per bit,
-  // XOR-accumulate the state where a polynomial bit is set) only yields a
-  // correct jump-ahead when the state transition is linear over GF(2). The
-  // cromulent recurrence is nonlinear (integer multiply + add in
-  // cromulent_next), so no such GF(2) matrix M exists and this procedure does
-  // NOT land 2^64 steps ahead. What it does provide is a deterministic,
-  // seed-dependent decorrelation of the state: it advances 128 steps and folds
-  // in a fixed subset of the visited states. It is suitable for cheaply
-  // deriving a distinct-looking sub-stream, but it does not guarantee that
-  // sub-streams are non-overlapping. Do not rely on it for parallel-stream
-  // independence until a real skip-ahead for this recurrence is implemented.
-  const uint64_t jump_a[2] = {SC1, SC2};
-
-  uint64_t s0 = 0;
-  uint64_t s1 = 0;
-
-  for (int word = 0; word < 2; word++) {
-    const uint64_t bits = jump_a[word];
-    for (int i = 0; i < 64; i++) {
-      if (bits & (1ULL << i)) {
-        s0 ^= state->s0;
-        s1 ^= state->s1;
-      }
-      cromulent_next(state);
-    }
-  }
-
-  state->s0 = s0;
-  state->s1 = s1;
-}
-
 #ifdef __SIZEOF_INT128__
 uint64_t cromulent_range(cromulent_state *state, uint64_t n) {
   // Generate a uniform random number in [0, n). Returns 0 when n is 0.

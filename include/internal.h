@@ -15,9 +15,6 @@
 #define C5 0xc4ceb9fe1a85ec53ULL
 #define C6 0xd1342543de82ef95ULL
 
-#define SC1 0x3b22c4a0c50de29bULL
-#define SC2 0x5e4d93b362c7f62aULL
-
 #define MH3 0xd6e8feb86659fd93ULL
 
 #if defined(__AVX2__)
