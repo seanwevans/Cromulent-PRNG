@@ -1,0 +1,5 @@
+name: cromulent
+version: 0.1.0
+description: The Cromulent PRNG (Crystal port of the scalar reference generator)
+license: MIT
+crystal: ">= 1.0.0"
