@@ -1,0 +1,65 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/user/Cromulent-PRNG/bindings/fsharp/cromulent.fsproj": {}
+  },
+  "projects": {
+    "/home/user/Cromulent-PRNG/bindings/fsharp/cromulent.fsproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/user/Cromulent-PRNG/bindings/fsharp/cromulent.fsproj",
+        "projectName": "cromulent",
+        "projectPath": "/home/user/Cromulent-PRNG/bindings/fsharp/cromulent.fsproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/home/user/Cromulent-PRNG/bindings/fsharp/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/root/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/lib/dotnet/sdk/8.0.128/FSharp/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FSharp.Core": {
+              "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[8.0.102, )",
+              "generatePathProperty": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.128/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

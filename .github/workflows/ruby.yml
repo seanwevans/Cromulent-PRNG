@@ -1,0 +1,22 @@
+name: Ruby
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'bindings/ruby/**', '.github/workflows/ruby.yml' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ 'bindings/ruby/**', '.github/workflows/ruby.yml' ]
+
+jobs:
+  test:
+    name: ruby test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+      - name: Test
+        working-directory: bindings/ruby
+        run: ruby test/test_cromulent.rb
