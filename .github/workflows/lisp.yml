@@ -1,0 +1,21 @@
+name: Common Lisp
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'bindings/lisp/**', '.github/workflows/lisp.yml' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ 'bindings/lisp/**', '.github/workflows/lisp.yml' ]
+
+jobs:
+  test:
+    name: sbcl
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install SBCL
+        run: sudo apt-get update && sudo apt-get install -y sbcl
+      - name: Test
+        working-directory: bindings/lisp
+        run: sbcl --script test/test.lisp
