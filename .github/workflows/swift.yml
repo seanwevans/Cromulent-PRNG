@@ -1,0 +1,20 @@
+name: Swift
+
+on:
+  push:
+    branches: [ main ]
+    paths: [ 'bindings/swift/**', '.github/workflows/swift.yml' ]
+  pull_request:
+    branches: [ main ]
+    paths: [ 'bindings/swift/**', '.github/workflows/swift.yml' ]
+
+jobs:
+  test:
+    name: swift run
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: swift-actions/setup-swift@v2
+      - name: Test
+        working-directory: bindings/swift
+        run: swift run -c release
