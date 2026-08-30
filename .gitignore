@@ -17,11 +17,12 @@ build/
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
-Makefile
+# Only the in-source CMake Makefile at the repo root -- an unanchored
+# "Makefile" pattern also swallows the hand-written binding Makefiles.
+/Makefile
 compile_commands.json
 
-# Generated test results
-tests/results/
+# CTest scratch directories
 Testing/
 
 # Logs and temporary files
