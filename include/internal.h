@@ -32,8 +32,8 @@ static inline __m256i mullo_epi64_avx2(__m256i a, __m256i b) {
 }
 
 // Vectorized counterpart of the scalar mix_fast(): a single-multiply finalizer
-// using MH3. Must stay in lock-step with mix_fast() so that cromulent_avx2_next
-// reproduces the scalar cromulent_next stream lane-for-lane.
+// using MH3. Must stay in lock-step with mix_fast() so that each AVX2 lane
+// advances by exactly the same recurrence as cromulent_next().
 static inline __m256i mix_fast_avx2(__m256i x) {
   x = _mm256_xor_si256(x, _mm256_srli_epi64(x, 32));
   x = mullo_epi64_avx2(x, _mm256_set1_epi64x(MH3));

@@ -35,6 +35,13 @@ typedef struct {
 // Callers must only dispatch to the AVX2 entry points when the CPU reports
 // support for the instruction set; the scalar implementations remain the
 // baseline fall-back.
+//
+// cromulent_avx2_init seeds four *independent* lanes from eight consecutive
+// SplitMix64 outputs, pairing lane i's (s0, s1) as (buf[i], buf[i + 4]). Every
+// lane runs the same recurrence as cromulent_next(), but from its own starting
+// point, so no lane reproduces the scalar stream for the same seed: the vector
+// and scalar generators produce four interleaved substreams, not one shared
+// sequence, and they cannot be swapped for each other mid-stream.
 void cromulent_avx2_init(cromulent_avx2_state *state, uint64_t seed);
 __m256i cromulent_avx2_next(cromulent_avx2_state *state);
 #endif
