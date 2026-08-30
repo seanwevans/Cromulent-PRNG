@@ -60,25 +60,26 @@ This will install the library and headers to your system.
 
 ```c
 #include "cromulent.h"
+#include <inttypes.h>
 #include <stdio.h>
 
-int main() {
+int main(void) {
     // Initialize the PRNG with a seed
     cromulent_state state;
     cromulent_init(&state, 12345);
-    
+
     // Generate and print 10 random numbers
     for (int i = 0; i < 10; i++) {
-        printf("%lu\n", cromulent_next(&state));
+        printf("%" PRIu64 "\n", cromulent_next(&state));
     }
-    
+
     // Generate a random double in [0, 1)
     double rand_double = cromulent_double(&state);
     printf("Random double: %f\n", rand_double);
-    
+
     // Generate a random integer in range [0, 99]
     uint64_t rand_range = cromulent_range(&state, 100);
-    printf("Random in range [0, 99]: %lu\n", rand_range);
+    printf("Random in range [0, 99]: %" PRIu64 "\n", rand_range);
 
     return 0;
 }
