@@ -46,35 +46,14 @@ uint64_t cromulent_next(cromulent_state *state) {
   return result;
 }
 
-static uint64_t t[2];
-void init_cromulent(uint64_t seed) {
-  t[0] = seed;
-  t[0] = (t[0] ^ (t[0] >> 30)) * C2;
-  t[0] = (t[0] ^ (t[0] >> 27)) * C3;
+// Registry entry points. These wrap the same state and the same step function
+// as cromulent_init/cromulent_next so that looking the generator up by name
+// and calling it directly cannot produce different streams for one seed.
+static cromulent_state registry_state;
 
-  t[1] = t[0] + C1;
+void init_cromulent(uint64_t seed) { cromulent_init(&registry_state, seed); }
 
-  t[0] = (t[0] ^ (t[0] >> 31));
-
-  t[1] = (t[1] ^ (t[1] >> 30)) * C2;
-  t[1] = (t[1] ^ (t[1] >> 27)) * C3;
-
-  t[1] = (t[1] ^ (t[1] >> 31));
-}
-
-uint64_t cromulent128pp(void) {
-  uint64_t a = t[0];
-  uint64_t b = t[1];
-  t[0] = a * C6 + b;
-  t[1] = rotl(b, 31) + mix_fast(a);
-
-  uint64_t result = a + rotl(b, 11);
-  result ^= result >> 27;
-  result *= C3;
-  result ^= result >> 27;
-
-  return result;
-}
+uint64_t cromulent128pp(void) { return cromulent_next(&registry_state); }
 
 double cromulent_double(cromulent_state *state) {
   // Generate uniform double in [0, 1)
