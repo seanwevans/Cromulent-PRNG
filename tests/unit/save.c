@@ -10,6 +10,17 @@
 #include <stdlib.h>
 #include <string.h>
 
+// cromulent_save documents a little-endian layout, so decode the buffer
+// explicitly. memcpy()ing the bytes into a uint64_t would instead test the
+// host's native byte order and fail on a big-endian target.
+static uint64_t decode_le64(const uint8_t *in) {
+    uint64_t x = 0;
+    for (int i = 0; i < 8; i++) {
+        x |= ((uint64_t)in[i]) << (8 * i);
+    }
+    return x;
+}
+
 // For simplicity, define a check macro that prints error info
 #define CHECK(cond, msg) do { \
     if (!(cond)) { \
@@ -30,9 +41,8 @@ int test_save_basic() {
     cromulent_save(&st, buffer);
     
     // Manually check the saved state against the internal state
-    uint64_t saved_s0, saved_s1;
-    memcpy(&saved_s0, buffer, sizeof(uint64_t));
-    memcpy(&saved_s1, buffer + sizeof(uint64_t), sizeof(uint64_t));
+    uint64_t saved_s0 = decode_le64(buffer);
+    uint64_t saved_s1 = decode_le64(buffer + 8);
     
     CHECK(saved_s0 == st.s0, "Saved s0 should match state s0");
     CHECK(saved_s1 == st.s1, "Saved s1 should match state s1");
@@ -58,9 +68,8 @@ int test_save_after_generation() {
     cromulent_save(&st, buffer);
     
     // Check saved values
-    uint64_t saved_s0, saved_s1;
-    memcpy(&saved_s0, buffer, sizeof(uint64_t));
-    memcpy(&saved_s1, buffer + sizeof(uint64_t), sizeof(uint64_t));
+    uint64_t saved_s0 = decode_le64(buffer);
+    uint64_t saved_s1 = decode_le64(buffer + 8);
     
     CHECK(saved_s0 == st.s0, "Saved s0 should match state s0 after generation");
     CHECK(saved_s1 == st.s1, "Saved s1 should match state s1 after generation");
@@ -85,9 +94,8 @@ int test_save_after_advance() {
     cromulent_save(&st, buffer);
 
     // Check saved values
-    uint64_t saved_s0, saved_s1;
-    memcpy(&saved_s0, buffer, sizeof(uint64_t));
-    memcpy(&saved_s1, buffer + sizeof(uint64_t), sizeof(uint64_t));
+    uint64_t saved_s0 = decode_le64(buffer);
+    uint64_t saved_s1 = decode_le64(buffer + 8);
 
     CHECK(saved_s0 == st.s0, "Saved s0 should match state s0 after advance");
     CHECK(saved_s1 == st.s1, "Saved s1 should match state s1 after advance");
